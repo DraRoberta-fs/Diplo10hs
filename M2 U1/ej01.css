@@ -1,0 +1,30 @@
+
+/*
+
+  
+*/
+.caja{ 
+    background-color: yellow;
+    width: 300px;
+    padding: 10px;
+    margin: 50px;
+    background: rgb(131,58,180);
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(208,29,253,1) 50%, rgba(252,176,69,1) 100%);
+     border-radius: 20px;
+     box-shadow: 20px 50px 5px black;
+     font-family: "Inria Sans", sans-serif;
+     
+}
+.texto{
+
+background-color: orange;
+width: 900px;
+column-count: 4;
+}
+.texto .p{
+    margin: o;
+}
+h2{
+    font-family: "Sofadi One", system-ui;
+
+}

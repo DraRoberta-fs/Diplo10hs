@@ -20,3 +20,6 @@ text-transform: uppercase;
 
 }
 ul{ color: blue;}
+p{
+    display: flex;
+}

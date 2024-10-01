@@ -1,0 +1,40 @@
+.contenedor {
+    display: flex;
+    justify-content: flex-end;
+    border: 10px solid black;
+    height: 600px;
+    width: 600px;
+    flex-direction: column;
+    
+
+
+
+}
+
+.item {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    text-align: center;
+    
+
+
+
+
+}
+
+#caja1 {
+
+
+    background-color: red;
+
+}
+
+#caja2 {
+    background-color: blue;
+}
+#caja3 {
+        background-color: green;
+        
+    }

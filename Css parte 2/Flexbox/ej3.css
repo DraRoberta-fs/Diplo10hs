@@ -1,11 +1,13 @@
 .contenedor {
     display: flex;
-    align-content: flex-end;
-    border: 5px solid black;
-    height: 600px;
-    width: 600px;
-    flex-direction: row-reverse;
-    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    border: 2px solid black;
+    height: 200px;
+    width: 1400px
+
+    
+    
 
     
     

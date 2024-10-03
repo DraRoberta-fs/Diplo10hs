@@ -33,15 +33,17 @@
 #caja1 {
       
      background-color: red;
+     color: white;
     
 }
 
 #caja2 {
     background-color: blue;
-    
+    color: white;
 }
 #caja3 {
         background-color: green;
+        color: white;
         
         
         

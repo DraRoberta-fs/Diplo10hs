@@ -42,9 +42,11 @@ aside {
 }
 
 @media screen and (max-width: 600px) {
+    
     body {
         background: none;
         margin: 0;
+        
     }
 
     #contenedor {
@@ -64,7 +66,8 @@ aside {
         flex-wrap: wrap;
         width: 100%;
         margin: 0;
-        border-color: black;
+        border: 2px solid black;
+       
        
     }
 
@@ -73,4 +76,8 @@ aside {
         flex-wrap: wrap;
         width: 100%;
     }
+  nav ul li a {
+    color: black;
+
+   
 }

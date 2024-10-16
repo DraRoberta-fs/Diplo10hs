@@ -57,6 +57,7 @@ aside {
         flex-wrap: wrap;
         width: 100%;
         background-color: orange;
+        
         }
       }
     section {
@@ -64,6 +65,7 @@ aside {
         width: 100%;
         margin: 0;
         border-color: black;
+       
     }
 
     aside {

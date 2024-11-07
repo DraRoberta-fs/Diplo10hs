@@ -16,29 +16,29 @@
 
       //+100000 = avion
 
-        const distancia1 = 0  < 1001 ;
-        const distancia2 = 1000 < 10001 ;
-        const distancia3 = 10000 < 30001 ;
-        const distancia4 = 30000 < 100001 ;
-        const distancia5 =  100001 ;
+      let distance = 8888;
+      
+      if (distance <= 1000 ) {
+        console.log ('apie');
 
+      }
+      else if (distance > 1000 && distance <= 10000 ) {
+        console.log ('bicicleta'); 
+      }
+      else if (distance > 10000 && distance <=30000 ) {
+        console.log ('colectivo');
+      }
+      else if ( distance > 30000 && distance <= 1000000) {
+        console.log ( 'auto');
+      }
+      else {
+        console.log ('avion');
+      }
 
-        if (distancia1) {
-    return "a pie";
-} else if (distancia2) {
-    return "bicicleta";
-} else if (distancia3) {
-    return "colectivo";
-} else if (distancia4) {
-    return "auto";
-} else (distancia5) {
-    return "avion";
-}
-    console.log
    
 
 
-
+     </script>
 
 </body>
 </html>

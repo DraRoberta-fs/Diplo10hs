@@ -1,0 +1,17 @@
+
+.color-caja {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.caja1 {
+    background-color: red;
+}
+.caja2 {
+    background-color: green;
+}
+.caja3 { 
+    background-color:blue ;
+}

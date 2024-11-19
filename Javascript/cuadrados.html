@@ -18,15 +18,17 @@
     
 
     <script>
+        let body = document.querySelector ('body')
+        console.log (body)
     
         document.getElementById('caja1').addEventListener('click', function()
-         { this.style.backgroundColor = 'red'; });
+         { body.style.backgroundColor = 'red'; });
          
         document.getElementById("caja2").addEventListener("click", function () {
-            this.style.backgroundColor = 'green';
+            body.style.backgroundColor = 'green';
         });
         document.getElementById("caja3").addEventListener("click", function () {
-            this.style.backgroundColor = 'blue';
+            body.style.backgroundColor = 'blue';
         });
 
 

@@ -6,11 +6,12 @@ var logger = require('morgan');
 
 require('dotenv').config();
 
-var pool = require('./bd');
+var pool = require('./models/bd');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { createPool } = require('mysql');
 
 var app = express();
 
@@ -29,27 +30,38 @@ app.use('/users', usersRouter);
 
 //consultas
 
-pool.query('SELECT nombre, edad FROM empleados').then(function(resultados) { 
-  
+pool.query("select nombre, edad from empleados").then(function(resultados){
   console.log(resultados)
- });
-
- var pool = require('./bd');
- var obj = {
-   nombre: 'Juan',
-   apellido: 'Lopez'
- };
- 
- 
-pool.query("insert into alumnos set ?", [obj]).then(function(resultados) {
-  console.log(resultados);
 });
 
+//var obj = {
+  //nombre: 'Juan',
+ // apellido: 'Lopez',
+ // trabajo: 'ingeniero',
+ // edad: 85,
+ // salario: 10000000,
+ // mail: 'juan@lalalah.com'
+//}
+
+//pool.query("insert into empleados set ?", [obj]).then(function(resultados) {
+// console.log(resultados); 
+
+//});
+ //var id_emp = 1;
+ //var obj = {
+ // nombre : 'Pablo',
+// apellido : 'Gomez'
+ //}
+ //pool.query("UPDATE empleados SET ? WHERE id_emp = ?", [obj, id_emp]) .then(function(resultados) 
+ //{ console.log(resultados);
+
+  //})
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
+async function fetchEmployees() { try { const resultados = await pool.query('SELECT nombre, edad FROM empleados'); console.log(resultados); } catch (error) { console.error('Error executing query', error); } } fetchEmployees();
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -61,4 +73,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = app ;

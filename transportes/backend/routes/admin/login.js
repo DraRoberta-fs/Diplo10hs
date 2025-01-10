@@ -1,56 +1,39 @@
-var express = require('express');
-var router = express.Router();
-var md5 = require('md5');
-
-// Ensure that your main server file (app.js) includes these:
-// const express = require('express');
-// const app = express();
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
-var usuariosModel =require('./../../models/usuariosModel')
-
-router.get('/', function (req, res, next) {
-  res.render('admin/login', {
-    layout: 'admin/layout'
-  });
-});
-
-router.get('logout', function (req, res, next) {
-  req.session.destroy();
-  res.render('admin/login', {
-    layout: 'admin/logout'
-  });
-});
-
+const express = require('express');
+const router = express.Router();
+const usuariosModel = require('./../../models/usuariosModel');
+const md5 = require('md5');
 
 router.post('/', async (req, res, next) => {
     try {
         var usuario = req.body.usuario;
         var password = req.body.password;
 
-        var data = await 
-      usuariosModel.getUserByUsernameAndPassword(usuario, password);
+        console.log('Request Body:', req.body); // Log entire request body
+        console.log('Received usuario:', usuario);  // Log to verify value
+        console.log('Received password:', password);  // Log to verify value
 
-        //console.log('Received usuario:', usuario);  // Log to verify value
-       // console.log('Received password:', password);  // Log to verify value
+        if (!usuario || !password) {
+            console.error('Usuario or password is missing');
+            return res.render('admin/login', {
+                layout: 'admin/layout',
+                error: true
+            });
+        }
 
-        //if (!usuario || !password) {
-          //  console.error('Usuario or password is missing');
-          //  return res.render('admin/login', {
-               // layout: 'admin/layout',
-             //   error: true
-          //  });
-       // }
+        var hashedPassword = md5(password);
+        console.log('Hashed password:', hashedPassword);  // Log the hashed password
 
-        //var hashedPassword = md5(password);
-        //var data = await usuariosModel.getUserByUsernameAndPassword(usuario, hashedPassword);
+        var data = await usuariosModel.getUserByUsernameAndPassword(usuario, hashedPassword);
+        
+        console.log(data)
 
-        if (data != undefined) {
+        if (data !== undefined) {
+           console.log('getting here')
             req.session.id_usuario = data.id;
             req.session.nombre = data.usuario;
-            res.redirect('admin/novedades');
+            res.redirect('/admin/novedades');
         } else {
+          console.log('getting or here')
             res.render('admin/login', {
                 layout: 'admin/layout',
                 error: true

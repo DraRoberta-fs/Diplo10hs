@@ -21,34 +21,33 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use(session({
   secret: 'PW2021awqyeudj',
   cookie: { maxAge: null },
   resave: false,
   saveUninitialized: true
-}))
+}));
 
-secured = async (req, res, next) => {
-  try{
+// Define the secured middleware function
+const secured = async (req, res, next) => {
+  try {
     console.log(req.session.id_usuario);
-    if (req.session.id_usuario) { next ();
-
+    if (req.session.id_usuario) {
+      next();
     } else {
       res.redirect('/admin/login');
-
     }
-
   } catch (error) {
     console.log(error);
+    next(error); // Ensure errors are passed to the next middleware
   }
-}
+};
 
-
+// Routes setup
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);

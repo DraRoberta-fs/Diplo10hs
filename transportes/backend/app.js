@@ -11,7 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
-const { truncate } = require('fs');
+//const { truncate } = require('fs');
 
 var app = express();
 

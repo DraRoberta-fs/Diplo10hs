@@ -1,31 +1,30 @@
 
+<hi> Armamos el login </hi>
 <div class="container" style="margin: 100px;">
   <div class="row">
     <form action="/admin/login" method="post">
-     <div class="mb-3 row">
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputUser"
-        placeholder="Usuario" name="usuario">
+      <div class="mb-3 row">
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputUser" placeholder="Usuario" name="usuario">
+
+        </div>
 
       </div>
+      <div class="mb-3 row">
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" name="password">
 
-     </div>
-     <div class="mb-3 row">
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword"
-        placeholder="Contraseña" name="password">
+        </div>
 
       </div>
-
-     </div>
       <button type="submit" class="btn btn-primary">Ingresar
 
       </button>
     </form>
-     {{#if error}}
-      <p>Usuario y/o contraseña incorrectos</p>
+    {{#if error}}
+    <p>Usuario y/o contraseña incorrectos</p>
 
-     {{/if}}
+    {{/if}}
 
 
   </div>

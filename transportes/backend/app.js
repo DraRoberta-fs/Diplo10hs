@@ -33,19 +33,39 @@ app.use(session({
 }));
 
 // Define the secured middleware function
+// const secured = async (req, res, next) => {
+  // try {
+  //   console.log(req.session.id_usuario);
+  //   if (req.session.id_usuario) {
+  //     next();
+  //   } else {
+  //     res.redirect('/admin/login');
+  //   }
+  // } catch (error) {
+  //   console.log(error);
+  //   next(error); // Ensure errors are passed to the next middleware
+  // }
+// };
+// de la clasenp
+
+
 const secured = async (req, res, next) => {
   try {
-    console.log(req.session.id_usuario);
-    if (req.session.id_usuario) {
-      next();
-    } else {
-      res.redirect('/admin/login');
-    }
+      console.log('Secured middleware called');
+      console.log('Session ID Usuario:', req.session.id_usuario); // Log the session user ID
+
+      if (req.session.id_usuario) {
+          console.log('User authenticated, proceeding to next middleware');
+          next(); // Proceed to the next middleware or route handler
+      } else {
+          console.log('User not authenticated, redirecting to /admin/login');
+          res.redirect('/admin/login'); // Redirect to the login page
+      }
   } catch (error) {
-    console.log(error);
-    next(error); // Ensure errors are passed to the next middleware
+      console.log('Error in secured middleware:', error);
+      next(error); // Pass the error to the next middleware (e.g., error handler)
   }
-};
+};//
 
 // Routes setup
 app.use('/', indexRouter);

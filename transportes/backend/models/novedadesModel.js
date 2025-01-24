@@ -56,5 +56,6 @@ module.exports = {
     getNovedades,
     insertNovedades,
     deleteNovedadesById,
-    getNovedadesById
+    getNovedadesById,
+    modificarNovedadById
 };

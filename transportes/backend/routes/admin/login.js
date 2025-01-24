@@ -50,7 +50,7 @@
 
 const express = require('express');
 const router = express.Router();
-const usuariosModel = require('../../models/usuariosModel'); // Ensure correct path
+const usuariosModel = require('../../models/usuariosModel'); 
 const md5 = require('md5');
 
 // Render login page

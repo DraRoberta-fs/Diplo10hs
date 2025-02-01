@@ -1,0 +1,38 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+header {
+  background-color: grey;
+  padding: 16px;
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+}
+
+header .holder {
+  display: flex;
+  align-items: center; /* Vertically center logo and h1 */
+}
+
+header .holder img {
+  margin-right: 10px; /* Space between logo and h1 */
+}
+
+header h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+  font-style: italic;
+  margin: 0; /* Remove default margin */
+}
+
+footer {
+  background-color: #ccc;
+  clear: both;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 20px;
+}

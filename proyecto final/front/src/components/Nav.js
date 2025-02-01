@@ -1,3 +1,4 @@
+import '../styles/Nav.css';
 import { Link } from "react-router-dom";
 
 const Nav = (props) => {
